@@ -1,18 +1,20 @@
 package com.samettok.controller;
 
 import com.samettok.controller.impl.StudentControllerImpl;
+import com.samettok.dto.DtoStudent;
+import com.samettok.dto.DtoStudentIU;
 import com.samettok.entities.Student;
 
 import java.util.List;
 
 public interface IStudentController  {
-    public Student saveStudent(Student student);
+    public DtoStudent saveStudent(DtoStudentIU dtoStudent);
 
-    public Student getStudentById(int id);
+    public DtoStudent getStudentById(int id);
 
-    public List<Student> getAllStudents();
+    public List<DtoStudent> getAllStudents();
 
     public void deleteStudentById(int id);
 
-    public Student updateStudent(Integer id, Student updatedStudent);
+    public DtoStudent updateStudent(Integer id, DtoStudentIU updatedStudent);
 }

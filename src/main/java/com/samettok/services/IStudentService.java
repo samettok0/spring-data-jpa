@@ -1,13 +1,15 @@
 package com.samettok.services;
 
+import com.samettok.dto.DtoStudent;
+import com.samettok.dto.DtoStudentIU;
 import com.samettok.entities.Student;
 
 import java.util.List;
 
 public interface IStudentService {
-    public Student saveStudent(Student student);
-    public Student getStudentById(int id);
-    public List<Student> getAllStudents();
+    public DtoStudent saveStudent(DtoStudentIU dtoStudent);
+    public DtoStudent getStudentById(int id);
+    public List<DtoStudent> getAllStudents();
     public void deleteStudentById(int id);
-    public Student updateStudent(Integer id, Student updatedStudent);
+    public DtoStudent updateStudent(Integer id, DtoStudentIU updatedStudent);
 }

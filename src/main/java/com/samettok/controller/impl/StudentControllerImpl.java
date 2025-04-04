@@ -1,7 +1,8 @@
 package com.samettok.controller.impl;
 
 import com.samettok.controller.IStudentController;
-import com.samettok.entities.Student;
+import com.samettok.dto.DtoStudent;
+import com.samettok.dto.DtoStudentIU;
 import com.samettok.services.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,19 +21,19 @@ public class StudentControllerImpl implements IStudentController {
     // DTO kullanılır normalde
     @PostMapping("/save")
     @Override
-    public Student saveStudent(@RequestBody Student student) {
-        return studentService.saveStudent(student);
+    public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudent) {
+        return studentService.saveStudent(dtoStudent);
     }
 
     @GetMapping("/get/{id}")
     @Override
-    public Student getStudentById(@PathVariable(name = "id") int id) {
+    public DtoStudent getStudentById(@PathVariable(name = "id") int id) {
         return studentService.getStudentById(id);
     }
 
     @GetMapping("/get/all")
     @Override
-    public List<Student> getAllStudents() {
+    public List<DtoStudent> getAllStudents() {
         return studentService.getAllStudents();
     }
 
@@ -44,8 +45,8 @@ public class StudentControllerImpl implements IStudentController {
 
     @PutMapping("/update/{id}")
     @Override
-    public Student updateStudent(@PathVariable(name = "id")  Integer id,
-                                 @RequestBody Student updatedStudent ) {
+    public DtoStudent updateStudent(@PathVariable(name = "id")  Integer id,
+                                 @RequestBody DtoStudentIU updatedStudent ) {
         return studentService.updateStudent(id, updatedStudent);
     }
 }
