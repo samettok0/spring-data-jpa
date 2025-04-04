@@ -2,7 +2,6 @@ package com.samettok.services;
 
 import com.samettok.dto.DtoStudent;
 import com.samettok.dto.DtoStudentIU;
-import com.samettok.entities.Student;
 
 import java.util.List;
 

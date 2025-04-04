@@ -1,9 +1,7 @@
 package com.samettok.controller;
 
-import com.samettok.controller.impl.StudentControllerImpl;
 import com.samettok.dto.DtoStudent;
 import com.samettok.dto.DtoStudentIU;
-import com.samettok.entities.Student;
 
 import java.util.List;
 
