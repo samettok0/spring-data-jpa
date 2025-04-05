@@ -4,6 +4,7 @@ import com.samettok.controller.IStudentController;
 import com.samettok.dto.DtoStudent;
 import com.samettok.dto.DtoStudentIU;
 import com.samettok.services.IStudentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class StudentControllerImpl implements IStudentController {
     // DTO kullanılır normalde
     @PostMapping("/save")
     @Override
-    public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudent) {
+    public DtoStudent saveStudent(@RequestBody @Valid DtoStudentIU dtoStudent) {
         return studentService.saveStudent(dtoStudent);
     }
 
